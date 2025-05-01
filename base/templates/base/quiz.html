@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'styles/stylequiz.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="quiz-intro-container">
+    <h2>Discover Your Career Path</h2>
+
+    <div class="quiz-box">
+        <h1>Find the Job That Fits You</h1>
+        <p>
+            Unsure about your future career? Take our quick and easy quiz to discover roles that align with your interests, personality, and skills.
+        </p>
+        <ul>
+            <li>✅ Quick – only 3–5 minutes</li>
+            <li>✅ Personalized results based on your answers</li>
+            <li>✅ No login or signup required</li>
+        </ul>
+
+        {% if request.GET.retake == 'true' %}
+            <p class="retake-message">Ready to try again? Let’s find your perfect match.</p>
+            <a href="{% url 'quiz_start' %}?retake=true" class="start-quiz-button" aria-label="Retake the career quiz">Start Quiz</a>
+        {% else %}
+            <a href="{% url 'quiz_start' %}" class="start-quiz-button" aria-label="Begin the career quiz">Start Quiz</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

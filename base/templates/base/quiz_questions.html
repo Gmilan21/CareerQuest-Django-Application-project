@@ -1,0 +1,60 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'styles/stylequizquestions.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="quiz-container">
+    <h2>Career Path Quiz (Page 1 of 5)</h2>
+    <p>Please rate how much you enjoy the following activities, from 1 (Dislike) to 5 (Love it).</p>
+
+    <form method="POST" action="{% url 'quiz_page_1' %}">
+        {% csrf_token %}
+        
+        {% if retake %}
+        <input type="hidden" name="retake" value="true">
+        {% endif %}
+
+        <div class="question">
+            <p><strong>1. I enjoy solving technical or logical problems.</strong></p>
+            {% for i in "12345" %}
+              <label><input type="radio" name="q1" value="{{ i }}" {% if data.q1 == i %}checked{% endif %}> {{ i }}</label>
+            {% endfor %}
+          </div>
+          
+          <div class="question">
+            <p><strong>2. I like helping others with their health, emotions, or well-being.</strong></p>
+            {% for i in "12345" %}
+              <label><input type="radio" name="q2" value="{{ i }}" {% if data.q2 == i %}checked{% endif %}> {{ i }}</label>
+            {% endfor %}
+          </div>
+          
+          <div class="question">
+            <p><strong>3. I enjoy designing websites, logos, or visual content.</strong></p>
+            {% for i in "12345" %}
+              <label><input type="radio" name="q3" value="{{ i }}" {% if data.q3 == i %}checked{% endif %}> {{ i }}</label>
+            {% endfor %}
+          </div>
+          
+          <div class="question">
+            <p><strong>4. I enjoy working with numbers, budgets, or financial tools.</strong></p>
+            {% for i in "12345" %}
+              <label><input type="radio" name="q4" value="{{ i }}" {% if data.q4 == i %}checked{% endif %}> {{ i }}</label>
+            {% endfor %}
+          </div>
+          
+          <div class="question">
+            <p><strong>5. I enjoy teaching, mentoring, or leading a group.</strong></p>
+            {% for i in "12345" %}
+              <label><input type="radio" name="q5" value="{{ i }}" {% if data.q5 == i %}checked{% endif %}> {{ i }}</label>
+            {% endfor %}
+          </div>
+          
+          <div class="quiz-buttons">
+            <button type="submit" class="btn job-desc-btn">Next →</button>
+          </div>
+    </form>
+</div>
+{% endblock %}

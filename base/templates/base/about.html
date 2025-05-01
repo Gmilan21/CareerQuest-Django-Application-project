@@ -1,0 +1,75 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'styles/styleabout.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="about-header">
+    <div class="about-text">
+        <h1>About</h1>
+        <h3>Discover Your Path to Success</h3>
+        <p>
+            Choosing the right career can be overwhelming, but we’re here to make it easier. Our platform helps graduates explore career opportunities through personalized quizzes that match their skills, personality, and interests with the perfect job.
+        </p>
+        <p>
+            We provide in-depth career insights, including job descriptions, salary expectations, required qualifications, and growth potential. Whether you’re just starting your journey or looking for a new direction, our goal is to help you make informed decisions about your future.
+        </p>
+    </div>
+    <div class="about-image">
+        <img src="{% static 'images/About1.png' %}" alt="Career Journey Illustration">
+    </div>
+</div>
+
+<div class="developers-section">
+    <h2>Meet the Developers</h2>
+    <div class="developers-grid">
+        <div class="developer-card">
+            <img src="{% static 'profile_pics\emptyprofpic.png' %}" alt="Developer 1"> {# Add your image link here #}
+            <h4>Jayant Thathireddy</h4>
+            <p>Description</p> {# Description goes here. Do we want like LinkedIn/Other socials here too? #}
+        </div>
+        <div class="developer-card">
+            <img src="{% static 'profile_pics\emptyprofpic.png' %}" alt="Developer 2"> {# Add your image link here #}
+            <h4>Milan Gupta</h4>
+            <p>Description</p> {# Description goes here. Do we want like LinkedIn/Other socials here too? #}
+        </div>
+        <div class="developer-card">
+            <img src="{% static 'profile_pics\emptyprofpic.png' %}" alt="Developer 3"> {# Add your image link here #}
+            <h4>Nikole Sazoncika</h4>
+            <p>Description</p> {# Description goes here. Do we want like LinkedIn/Other socials here too? #}
+        </div>
+        <div class="developer-card">
+            <img src="{% static 'profile_pics\emptyprofpic.png' %}" alt="Developer 4"> {# Add your image link here #}
+            <h4>Pritam Rai</h4>
+            <p>Description</p> {# Description goes here. Do we want like LinkedIn/Other socials here too? #}
+        </div>
+        <div class="developer-card">
+            <img src="{% static 'profile_pics\emptyprofpic.png' %}" alt="Developer 5"> {# Add your image link here #}
+            <h4>Raghav Patel</h4>
+            <p>Description</p> {# Description goes here. Do we want like LinkedIn/Other socials here too? #}
+        </div>
+    </div>
+</div>
+
+
+<div class="contact-section">
+    <h2>Contact Us</h2>
+    <p style="font-size: 17px; margin-bottom: 20px; max-width: 700px;">
+        Have feedback, questions, or suggestions? We’d love to hear from you!  
+        Please feel free to reach out to our team directly.
+    </p>
+
+    <div class="contact-email-box">
+        <p>
+            📧 Email us at:
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=careerquest2025@gmail.com&su=CareerQuest Inquiry" target="_blank" class="btn">careerquest2025@gmail.com</a>
+        </p>
+    </div>
+
+    <p style="margin-top: 30px; font-size: 15px; color: gray;">
+        We're actively working on improving CareerQuest. Your input helps us shape a better experience.
+    </p>
+</div>
+{% endblock %}
